@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Статьи</title>
+</head>
+
+<body>
+<h1>Статьи по категории "{{.Category}}"</h1>
+<ul>
+    {{ range .Articles }}
+    <li>
+        <h2>{{ .Title }}</h2>
+        <div class="content-container" style="display: none;">
+            {{ .Content }}
+        </div>
+        <button onclick="toggleContent(this)">Развернуть</button>
+    </li>
+
+</ul>
+
+<script>
+    function toggleContent(button) {
+        var contentContainer = button.parentNode.querySelector('.content-container');
+        contentContainer.style.display = (contentContainer.style.display === 'none' || contentContainer.style.display === '') ? 'block' : 'none';
+    }
+</script>
+
+</body>
+
+</html>

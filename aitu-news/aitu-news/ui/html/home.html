@@ -1,0 +1,28 @@
+<!-- ui/html/home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+<h1>Latest Articles</h1>
+<ul>
+    {{ range . }}
+    <li>
+        <h2>{{ .Title }}</h2>
+        <p>{{ .Content }}</p>
+    </li>
+    <br>
+    {{ end }}
+</ul>
+
+<a href="/category">Go to Categories</a>
+<a href="/contacts">Go to Contacts</a>
+<a href="/add" class="btn btn-primary">Add Article</a>
+<a href="/delete_article" class="btn btn-primary">Delete Article</a>
+
+</body>
+</html>
+

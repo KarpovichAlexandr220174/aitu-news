@@ -1,0 +1,20 @@
+<!-- ui/html/delete_article.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Article</title>
+</head>
+<body>
+<h1>Delete Article</h1>
+<form action="/delete_article" method="post">
+    <label for="articleID">Article ID:</label>
+    <input type="number" id="articleID" name="id" required><br>
+
+    <input type="hidden" name="id" value="12345">
+
+    <input type="submit" value="Delete Article">
+</form>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Категории статей</title>
+    <script>
+        function openCategory(category) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4) {
+                    if (this.status == 200) {
+                        document.getElementById("articles-container").innerHTML = this.responseText;
+                    } else {
+                        console.error("Error loading category:", this.status, this.statusText);
+                    }
+                }
+            };
+            xhttp.open("GET", "/category/" + category, true);
+            xhttp.send();
+        }
+    </script>
+</head>
+<body>
+<!-- Ваш остальной HTML-код для интерфейса категорий -->
+<h1>Категории статей</h1>
+<ul>
+    <li><a href="#" onclick="openCategory('forStudents')">Для студентов</a></li>
+    <li><a href="#" onclick="openCategory('forApplicants')">Для абитуриентов</a></li>
+    <li><a href="#" onclick="openCategory('forStaff')">Для сотрудников</a></li>
+    <li><a href="#" onclick="openCategory('forResearches')">Для исследователей</a></li>
+</ul>
+<a href="/home">Go to Home</a>
+
+<div id="articles-container">
+    <!-- Сюда будет подгружаться контент статей -->
+</div>
+</body>
+</html>

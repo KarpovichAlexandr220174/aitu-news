@@ -1,0 +1,24 @@
+<!-- ui/html/contacts.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts</title>
+</head>
+<body>
+<h1>Contacts</h1>
+<ul>
+    {{ range . }}
+    <li>
+        <strong>Name:</strong> {{ .Name }}<br>
+        <strong>Email:</strong> {{ .Email }}<br>
+        <strong>Message:</strong> {{ .Message }}
+    </li>
+    <br>
+    {{ end }}
+</ul>
+<a href="/home">Go to Home</a>
+<a href="/category">Go to Categories</a>
+</body>
+</html>
